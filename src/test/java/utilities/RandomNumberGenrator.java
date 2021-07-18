@@ -36,7 +36,7 @@ public class RandomNumberGenrator {
 
 //----------------------------------------------------------------------------------------------	
 
-	public static String generateSessionKey(int length){
+	public  String generateSessionKey(int length){
 
 	    String result = new String();
 	    Random r = new Random(); 

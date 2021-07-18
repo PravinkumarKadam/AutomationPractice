@@ -6,16 +6,14 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UseCaseOFJavaScript {
  
-	static WebDriver driver;
+	 WebDriver driver;
 	
 	@Before
 	public void setUp()
@@ -48,31 +46,31 @@ public class UseCaseOFJavaScript {
 
 
 
-    public static void  ClickElementByJS(WebElement element)
+    public  void  ClickElementByJS(WebElement element)
      {
        JavascriptExecutor js = ((JavascriptExecutor)driver);
        js.executeScript("arguments[0].click();", element);	 
      }
       
-    public static void scrolPageDown() 
+    public  void scrolPageDown() 
      {
          JavascriptExecutor js = ((JavascriptExecutor)driver);
          js.executeScript("window.scrollTO(0,document.body.scrollHeight)"); 	     
      }
  
-    public static void drawBorder(WebElement element)
+    public  void drawBorder(WebElement element)
      {
         JavascriptExecutor js = ((JavascriptExecutor)driver);
         js.executeScript("arguments[0].style.border ='3px solid red'",element); 	            
       }
 
-    public static void sendKeyUsingJSSwithID(String id, String value)
+    public  void sendKeyUsingJSSwithID(String id, String value)
      {
    	   JavascriptExecutor js = ((JavascriptExecutor)driver);
        js.executeScript("document.getElementById('"+id+"').value='"+value+"'"); 	            
      }
      
-     public static void openNewWindowTab(String newURL)
+     public  void openNewWindowTab(String newURL)
       {
    	    JavascriptExecutor js = ((JavascriptExecutor)driver);
    	    js.executeScript("window.open();"); 	            

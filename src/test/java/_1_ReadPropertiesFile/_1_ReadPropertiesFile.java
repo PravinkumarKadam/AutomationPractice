@@ -12,16 +12,16 @@ import java.util.concurrent.TimeUnit;
  
 public class  _1_ReadPropertiesFile {
 
-   static  WebDriver driver ;
-   static WebDriverWait wait;
-   static Properties prop;
+     WebDriver driver ;
+    WebDriverWait wait;
+    Properties prop;
 
-    public static Properties init_prop() 
+    public  Properties init_prop() 
     {
          prop = new Properties();
      try 
      {
-    	 FileInputStream fip = new FileInputStream("G:\\eclipse-workspace\\com.automationpractice\\src\\test\\resources\\conf.properties");
+    	 FileInputStream fip = new FileInputStream("G:\\Workplace\\com.automationpractice\\src\\test\\resources\\conf.properties");
      	  prop.load(fip); 
      }
      catch(FileNotFoundException e)
@@ -38,7 +38,7 @@ public class  _1_ReadPropertiesFile {
     }
 
 
-    public  static WebDriver init_driver(Properties prop)
+    public  WebDriver init_driver(Properties prop)
     {
         String browserName = prop.getProperty("browser");
 

@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 
 public class JavaScriptUtil {
 
-	static WebDriver driver;
+	 WebDriver driver;
 	
     public JavaScriptUtil(WebDriver driver) 
 	 {
 		this.driver = driver;
 	 }
 	
-    public static void scrollPageDown(WebDriver driver,WebElement element) 
+    public  void scrollPageDown(WebDriver driver,WebElement element) 
      {
          JavascriptExecutor js = ((JavascriptExecutor)driver);
          js.executeScript("arguments[0].scrollIntoView(true);",element); 	     
@@ -44,78 +44,78 @@ public class JavaScriptUtil {
           }
      }
  
-    public static void drawBorder(WebElement element)
+    public  void drawBorder(WebElement element)
     {
       JavascriptExecutor js = ((JavascriptExecutor) driver);
       js.executeScript("arguments[0].style.border ='3px solid red'",element); 	            
     }
 
-    public static void genaratAlert(String massage)
+    public  void genaratAlert(String massage)
     {
       JavascriptExecutor js = ((JavascriptExecutor) driver);
       js.executeScript("alert('"+ massage +"')"); 	            
     }
 
-    public static void  ClickElementByJS(WebElement element)
+    public  void  ClickElementByJS(WebElement element)
     {
       JavascriptExecutor js = ((JavascriptExecutor)driver);
       js.executeScript("arguments[0].click();", element);	 
     }
 
 
-    public static void  refreshBrowserByJS()
+    public  void  refreshBrowserByJS()
     {
       JavascriptExecutor js = ((JavascriptExecutor)driver);
       js.executeScript("history.go(0)");	 
     }
 
-    public static String  getTiltleByJS()
+    public  String  getTiltleByJS()
     {
       JavascriptExecutor js = ((JavascriptExecutor)driver);
       String title = js.executeScript("return document.title;").toString();	 
       return title;
     }
 
-    public static String  getPageInnerText()
+    public  String  getPageInnerText()
     {
       JavascriptExecutor js = ((JavascriptExecutor)driver);
       String pageText = js.executeScript("return document.documentElement.innerText;").toString();	 
       return pageText;
     }
 
-    public static void scrolPageDown() 
+    public  void scrolPageDown() 
     {
         JavascriptExecutor js = ((JavascriptExecutor)driver);
         js.executeScript("window.scrollTO(0,document.body.scrollHeight)"); 	     
     }
 
-    public static String getBrowserInfo() 
+    public  String getBrowserInfo() 
     {
         JavascriptExecutor js = ((JavascriptExecutor)driver);
         String uAgent=  js.executeScript("return navigator.userAgent;").toString(); 	     
         return uAgent;
     }
     
-    public static void sendKeyUsingJSSwithID(String id, String value)
+    public  void sendKeyUsingJSSwithID(String id, String value)
     {
   	   JavascriptExecutor js = ((JavascriptExecutor)driver);
       js.executeScript("document.getElementById('"+id+"').value='"+value+"'"); 	            
     }
     
-    public static void sendKeyUsingJSSwithName(String name, String value)
+    public  void sendKeyUsingJSSwithName(String name, String value)
     {
   	   JavascriptExecutor js = ((JavascriptExecutor)driver);
       js.executeScript("document.getElementById('"+name+"').value='"+value+"'"); 	            
     }
     
-    public static void selectValueByCSSJavaScript(String elementCSSValue, String valueToBeEnter)
+    public  void selectValueByCSSJavaScript(String elementCSSValue, String valueToBeEnter)
     {
   	   JavascriptExecutor js = ((JavascriptExecutor)driver);
       js.executeScript("document.getElementById('"+elementCSSValue+"').value='"+valueToBeEnter+"'"); 	            
     }
     
     
-    public static void  checkPageIsReady()
+    public  void  checkPageIsReady()
     {
       JavascriptExecutor js = ((JavascriptExecutor)driver);
       if(js.executeScript("return document.readyState").toString().equals("complete"));	 

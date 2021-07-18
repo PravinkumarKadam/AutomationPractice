@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class ContinuePreviousPage {
-static WebDriver driver;
-	public static void main(String[] args) {
+ WebDriver driver;
+	public  void main(String[] args) {
 		
 		ChromeOptions options = new ChromeOptions();
 	  options.setExperimentalOption("debuggerAddress", "localhost:9922");

@@ -15,11 +15,11 @@ import java.util.Properties;
 
 public class ElementAction {
 
-	static JavaScriptUtil javaScriptUtil;
-    static WebDriver driver;
-    static WebDriverWait wait;
-    static Actions action;
-    static Properties prop;
+	 JavaScriptUtil javaScriptUtil;
+     WebDriver driver;
+     WebDriverWait wait;
+     Actions action;
+     Properties prop;
 
 
     /*
@@ -37,7 +37,7 @@ public class ElementAction {
        javaScriptUtil = new JavaScriptUtil(driver);
     }
 
-    public static WebElement getElement(By locator)
+    public  WebElement getElement(By locator)
     {
         WebElement element = null;
         if (prop.getProperty("flashTheElement").equalsIgnoreCase("yes") && prop.getProperty("drawBorderToElement").equalsIgnoreCase("yes"))
@@ -57,58 +57,58 @@ public class ElementAction {
     return element;
     }
 
-    public static List<WebElement> getElementsList(By locator)
+    public  List<WebElement> getElementsList(By locator)
     {
     	List <WebElement> element = null;
     	element = (List<WebElement>) driver.findElement(locator);
     	return element;
     }
     
-    public static void doClick(By locator)
+    public  void doClick(By locator)
     {
     	getElement(locator).click();
     }
 
-    public static void doActionsClick(By locator)
+    public  void doActionsClick(By locator)
     {
 	  action.click(getElement(locator)).build().perform();
     }
      
-    public static void doSendKeys(By locator, String value)
+    public  void doSendKeys(By locator, String value)
     {
     	getElement(locator).sendKeys(value);
     }
 
-    public static void doactionsSendKeys(By locator, String value) 
+    public  void doactionsSendKeys(By locator, String value) 
      {
     	 action.sendKeys(getElement(locator),value).build().perform();
      }
 
-    public static boolean doIsDisplayed(By locator) 
+    public  boolean doIsDisplayed(By locator) 
     {
      	boolean flag = false;
 	    flag = getElement(locator).isDisplayed();
 	    return flag;
     } 
 
-    public static boolean doIsSelected(By locator) 
+    public  boolean doIsSelected(By locator) 
     {
      	boolean flag = false;
 	    flag = getElement(locator).isSelected();
 	    return flag;
     } 
     
-    public static void waitForElementPresent(By locator)
+    public  void waitForElementPresent(By locator)
     {
     	wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
     
-    public static void waitForFrameAvailableAndSwitchToIt(By locator)
+    public  void waitForFrameAvailableAndSwitchToIt(By locator)
     {
     	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
     }
     
-    public static void waitFor(By locator)
+    public  void waitFor(By locator)
     {
     WebElement element = getElement(locator);
     	wait.until(ExpectedConditions.invisibilityOf(element));

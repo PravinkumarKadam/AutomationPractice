@@ -1,4 +1,4 @@
-package screenshotCaptures;
+package screenshot;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,9 +8,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class screenshotCapture1 {
+public class screenshotCapture {
 	
-  public static void  ScreenShot(WebDriver driver, String FileName) throws IOException
+  public  void  ScreenShot(WebDriver driver, String FileName) throws IOException
 	 {
 		 File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		 try
