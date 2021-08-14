@@ -171,9 +171,9 @@ public class TestCases
 			System.out.println("Test 6 => Signin page Title Validation Test is passed"); 
 		}
 	  
-	@Test 
-	public void _7_CreateAccountTitleDisplayTest() 
-	{
+	    @Test 
+	    public void _7_CreateAccountTitleDisplayTest() 
+	  {
 
 		elementAction.doClick(landingPagelocator.signInButtonElement);
 
